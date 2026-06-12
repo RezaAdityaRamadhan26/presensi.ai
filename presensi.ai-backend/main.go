@@ -10,12 +10,14 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"github.com/nedpals/supabase-go"
 )
 
 var supabaseClient *supabase.Client
 
 func init() {
+	godotenv.Load() // Loads .env file
 	supabaseURL := "https://whjtoxddmmlzmhsjlrzi.supabase.co"
 	
 	supabaseKey := os.Getenv("SUPABASE_KEY")
